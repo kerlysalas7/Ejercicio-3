@@ -6,50 +6,44 @@ package Ejercicio3;
 
 /**
  *
- * @author PC
+ * @Kerly Salas
  */
 public class Libro {
-    
-    String titulo, autor, estado;
-    int paginas;
+    //atributos
+        String titulo, autor;
+        int paginas;
+        String estado;
 
-    public Libro() {
-    }
+        public Libro() {
+        }
+        public Libro(String titulo, String autor, int paginas) {
+            this.titulo = titulo;
+            this.autor = autor;
+            this.paginas = paginas;
+            this.estado = "disponible";
+        }
+        //metodos
 
-    public Libro(String titulo, String autor, String estado, int paginas) {
-        this.titulo = titulo;
-        this.autor = autor;
-        this.estado = "disponible";
-        this.paginas = paginas;
-    }
-    
-    public void prestar()
-    {
-        if(estado.equalsIgnoreCase("disponible") ){
-            estado = "prestado";
-            System.out.println("El libro se puede prestar");
-        }else {
-            System.out.println("El libro no esta dis[ponible");
+        public void prestar(){
+            if (estado.equalsIgnoreCase("disponible")) {
+                estado = "prestado";
+                System.out.println("El libro ahora esta prestado");
+            }else{
+                System.out.println("El Libro se encuentra prestado");
+            }
         }
-            
-    }
-    public void devolver()
-    {
-        if(estado.equalsIgnoreCase("prestado")){
-            estado = "disponible";
-            System.out.println("El libro esta prestado");
-        }else{
-            System.out.println("El libro esta disponible");
+        public void devolver(){
+            if(estado.equalsIgnoreCase("prestado")){
+                estado = "disponible";
+                System.out.println("El libro ahora esta disponible");
+            }else{
+                System.out.println("El libro se encuentra disponible");
+            }
         }
-    }
-    public void mostrarinfo()
-    {
-        System.out.println("INFORMACION DEL LIBRO");
-        System.out.println("Titulo: "+titulo);
-        System.out.println("Autor: "+ titulo);
-        System.out.println("Paginas: "+ paginas);
-        System.out.println("Estado: "+ estado);
-      
-    }
-    
+        public void mostrarinfo(){
+            System.out.println("Titulo: "+titulo);
+            System.out.println("Autor: "+autor);
+            System.out.println("Paginas: "+paginas);   
+            System.out.println("Estado: "+estado);
+        }
 }
